@@ -45,3 +45,8 @@
 .product-popup .portfolio-overlay {
   background-color: transparent;
 }
+
+#map {
+  width: 290px;
+  height: 170px;
+}
