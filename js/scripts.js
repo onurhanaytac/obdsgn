@@ -47,6 +47,8 @@
 
 	(function () {
 
+    $('.image-link').magnificPopup({type:'image'});
+
 		$('.product-items').magnificPopup({ 
 			delegate: 'a',
 			type: 'image',
@@ -57,13 +59,6 @@
 
 			gallery: {
 				enabled: true
-			},
-			zoom: {
-				enabled: true,
-				duration: 300, // don't foget to change the duration also in CSS
-				opener: function(element) {
-					return element.find('i');
-				}
 			}
 
 		});
