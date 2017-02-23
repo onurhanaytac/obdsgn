@@ -19,8 +19,6 @@ jQuery(document).ready(function() {
 	$(window).scroll(function(e){
 		//Not always the pos == h statement is verified, expecially on mobile devices, that's why a 300px of margin are assumed.
 		if($(window).scrollTop() + $(window).height() >= $(document).height() - 300) {
-			console.log("bottom of the page reached!");
-
 			//in some broswer (es. chrome) if the scroll is fast, the bottom 
 			//reach events fires several times, this may cause the page loaging 
 			//more than once. To prevent such situation every time the bottom is 
@@ -44,6 +42,19 @@ jQuery(document).ready(function() {
 					$('#loader').fadeOut('slow', function() {
 						$('#scroll-container').append(data).fadeIn(999);
 						current=position;
+
+						$('.product-items').magnificPopup({ 
+							delegate: 'a',
+							type: 'image',
+							// other options
+							closeOnContentClick: false,
+							closeBtnInside: false,
+							mainClass: 'mfp-img-mobile',
+							gallery: {
+								enabled: true
+							}
+						});
+						
 					});
 				});
 			});
